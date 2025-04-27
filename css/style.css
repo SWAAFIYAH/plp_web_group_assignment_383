@@ -428,7 +428,7 @@ body {
 
 /* Portfolio Section */
 .portfolio {
-    padding: 100px 0;
+    
 }
 
 .portfolio-item {
@@ -465,4 +465,85 @@ body {
     color: white;
     font-size: 1.5rem;
 }
+
+.container-portfolio{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    min-height: 100vh;
+    background-color: #00C16E;
+}
+
+.major-image-div{
+    display: flex;
+    flex-direction: column;
+    padding: 30px;
+    flex: 6;
+    background-color: lightgray;
+    
+
+}
+
+.green-badges {
+    flex: 4; /* 40% of container */
+    background-color: #007E68;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-size: 24px;
+    font-weight: bold;
+}
+
+.row g-4 mb-5{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
+    grid-template-rows: repeat(2, 1fr);    /* 2 equal rows */
+    gap: 5px; /* space between items */
+    width: 100%;   /* Set width of the grid */
+    height: 200px;
+    
+}
+
+.portfolio-item {
+    position: relative;
+    overflow: hidden;
+    width: 100%; /* full width of parent */
+    height: 150px; /* fixed height you choose */
+}
+
+.portfolio-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* ensures images cover the area without distortion */
+    display: block;
+}
+
+.portfolio-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 128, 0, 0.5); /* semi-transparent green overlay */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    opacity: 0; /* start invisible */
+    transition: opacity 0.3s ease;
+}
+
+.portfolio-item:hover .portfolio-overlay {
+    opacity: 1; /* show on hover */
+}
+
+
+.green-badges img {
+    max-width: 80%;
+    height: auto;
+}
+
+
+
 
