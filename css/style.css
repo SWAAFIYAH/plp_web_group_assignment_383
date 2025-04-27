@@ -5,6 +5,8 @@
     --light-color: #fff;
     --button-color: #007E68;
     --button-secondary-color: #00C16E;
+    --primary-footer: #061E24;
+    --secondary-footer: #01191D;
 }
 
 /* Global Styles */
@@ -16,17 +18,15 @@ body {
 
 /* Navigation */
 .navbar {
-    /* background-color: var(--secondary-color); */
     padding: 1rem 10%;
     transition: all 0.3s ease;
     position: fixed;
     width: 100%;
     top: 0;
-    /* z-index: 1000; */
 }
 
 .navbar.scrolled {
-    background-color: rgba(26, 41, 66, 0.95);
+    background-color: var(--primary-footer);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
@@ -44,8 +44,40 @@ body {
 
 .hire-me {
     background-color: var(--primary-color);
+    padding: 0.5rem 2.5rem;
+    border-radius: 50px;
+}
+
+.icon-button {
+    background: none;
+    border: none;
+    padding: 0.5rem;
+    font-size: 1.2rem;
+    color: var(--light-color);
+    transition: color 0.3s ease;
+}
+
+.icon-button:hover {
+    color: var(--primary-color);
+}
+
+.dropdown-menu {
+    background-color: rgba(26, 41, 66, 0.95);
+    backdrop-filter: blur(10px);
+    border: none;
+    margin-top: 0.5rem;
+}
+
+.dropdown-item {
+    color: var(--light-color);
     padding: 0.5rem 1.5rem;
-    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.dropdown-item:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: translateX(5px);
 }
 
 /* Hero Section */
@@ -56,7 +88,6 @@ body {
     background-position: center;
     background-repeat: no-repeat;
     position: relative;
-    /* padding: 8rem 0; */
     min-height: 100vh;
     display: flex;
     align-items: center;
@@ -69,11 +100,10 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(24, 47, 52, 0.85); /* var(--secondary-color) with opacity */
+    background: rgba(24, 47, 52, 0.85);
     z-index: 1;
 }
 
-/* Ensure content appears above overlay */
 .hero .container {
     position: relative;
     padding: 0 3%;
@@ -193,10 +223,8 @@ body {
 
 .about-content {
     font-size: 1rem;
-    /* text-align: center; */
     max-width: 600px;
     margin: 0 auto;
-    /* padding: 0rem 2rem; */
 }
 
 .about .img-fluid {
@@ -204,9 +232,7 @@ body {
     height: auto;
     filter: grayscale(100%);
     transition: filter 0.3s ease;
-    /* border-radius: 15px; */
     display: block;
-    /* margin: 0 auto; */
 }
 
 .about .img-fluid:hover {
@@ -274,23 +300,6 @@ body {
 .cta-buttons .btn-secondary {
     background-color: var(--button-secondary-color);
 }
-
-/* .skill {
-    margin-bottom: 1.5rem;
-}
-
-.skill-name {
-    margin-bottom: 0.5rem;
-}
-
-.progress {
-    height: 8px;
-    background-color: #f0f0f0;
-}
-
-.progress-bar {
-    background-color: var(--primary-color);
-} */
 
 /* Services Section */
 .services {
@@ -363,7 +372,6 @@ body {
 /* Skills Section */
 .skills {
     padding: 100px 10%;
-    background-color: #f8f9fa;
 }
 
 .skills-content {
@@ -371,7 +379,7 @@ body {
 }
 
 .skills-content h3 {
-    color: var(--primary-color);
+    color: #8C8F91;
     font-size: 1.2rem;
     margin-bottom: 1rem;
 }
@@ -410,6 +418,51 @@ body {
     transition: width 1s ease;
 }
 
+.services-grid {
+    background-color: #f8f9fa;
+    position: relative;
+    padding: 80px 0;
+}
+
+.service-item {
+    gap: 1rem;
+    padding: 0.8rem;
+    transition: all 0.3s ease;
+}
+
+.service-icon {
+    width: 45px;
+    height: 45px;
+    min-width: 45px;
+    background-color: var(--primary-color);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-icon i {
+    color: var(--light-color);
+    font-size: 1.2rem;
+}
+
+.service-content h4 {
+    font-size: 1.1rem;
+    margin-bottom: 0.3rem;
+    color: var(--secondary-color);
+}
+
+.service-content p {
+    margin: 0;
+    color: #6c757d;
+    font-size: 0.9rem;
+}
+
+.profile-image {
+    max-width: 90%;
+    margin-left: auto;
+}
+
 /* Statistics Section */
 .statistics {
     padding: 80px 0;
@@ -422,19 +475,18 @@ body {
 
 .stat-box h3 {
     font-size: 3rem;
-    color: var(--primary-color);
     margin-bottom: 1rem;
 }
 
 /* Portfolio Section */
 .portfolio {
-    
+    padding: 100px 10%;
+    background-color: #f8f9fa;
 }
 
 .portfolio-item {
     position: relative;
     overflow: hidden;
-    border-radius: 10px;
 }
 
 .portfolio-overlay {
@@ -479,43 +531,40 @@ body {
     flex-direction: column;
     padding: 30px;
     flex: 6;
-    background-color: lightgray;
-    
+}
 
+.badges {
+    padding: 0;
 }
 
 .green-badges {
-    flex: 4; /* 40% of container */
+    flex: 4;
     background-color: #007E68;
     display: flex;
     align-items: center;
     justify-content: center;
     color: white;
-    font-size: 24px;
+    font-size: 3rem;
     font-weight: bold;
 }
 
-.row g-4 mb-5{
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* 3 equal columns */
-    grid-template-rows: repeat(2, 1fr);    /* 2 equal rows */
-    gap: 5px; /* space between items */
-    width: 100%;   /* Set width of the grid */
-    height: 200px;
-    
+.badges-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .portfolio-item {
     position: relative;
     overflow: hidden;
-    width: 100%; /* full width of parent */
-    height: 150px; /* fixed height you choose */
+    width: 100%; 
+    height: 150px;
 }
 
 .portfolio-item img {
     width: 100%;
     height: 100%;
-    object-fit: cover; /* ensures images cover the area without distortion */
+    object-fit: cover;
     display: block;
 }
 
@@ -525,17 +574,17 @@ body {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 128, 0, 0.5); /* semi-transparent green overlay */
+    background: rgba(0, 128, 0, 0.5);
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    opacity: 0; /* start invisible */
+    opacity: 0;
     transition: opacity 0.3s ease;
 }
 
 .portfolio-item:hover .portfolio-overlay {
-    opacity: 1; /* show on hover */
+    opacity: 1;
 }
 
 
@@ -544,6 +593,129 @@ body {
     height: auto;
 }
 
+.whitespace {
+    background-color: #f8f9fa;
+}
 
+/* Footer Styles */
+.footer {
+    background-color: var(--primary-footer);
+    padding: 3rem 0 1rem;
+}
 
+.footer-content {
+    display: table;
+    justify-content: space-between;
+    align-items: center;
+}
 
+.footer-contents {
+    display: table;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 1.2rem;
+}
+
+.footer-logo {
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 1.5rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.footer-logo:hover {
+    color: var(--primary-color);
+}
+
+.footer-contact {
+    color: var(--light-color);
+    text-decoration: none;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    transition: color 0.3s ease;
+}
+
+.footer-contact:hover {
+    color: var(--primary-color);
+}
+
+.footer-social {
+    display: flex;
+    gap: 1rem;
+}
+
+.social-icon {
+    color: var(--light-color);
+    text-decoration: none;
+    width: 35px;
+    height: 35px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: all 0.3s ease;
+}
+
+.social-icon:hover {
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    transform: translateY(-3px);
+}
+
+.footer-secondary {
+    background-color: var(--secondary-footer);
+}
+
+.footer-bottom {
+    text-align: center;
+    display: flex;
+    justify-content: space-around;
+    background-color: var(--secondary-footer);
+    padding: 1rem;
+    align-items: center;
+}
+
+.footer-bottom p {
+    color: var(--light-color);
+    margin: 0;
+    opacity: 0.7;
+    font-size: 0.9rem;
+}
+
+/* Back to Top Button */
+.back-to-top {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    background-color: var(--primary-color);
+    color: var(--light-color);
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    border: none;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.2rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    opacity: 0;
+    visibility: hidden;
+    z-index: 1000;
+}
+
+.back-to-top.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.back-to-top:hover {
+    background-color: var(--secondary-color);
+    transform: translateY(-3px);
+}
